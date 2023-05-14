@@ -1,0 +1,16 @@
+@use "../util" as *;
+
+.center-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2fr;
+  grid-column-gap: rem(25);
+  grid-row-gap: 0px;
+
+  .main-section {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  .aside-section {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+}

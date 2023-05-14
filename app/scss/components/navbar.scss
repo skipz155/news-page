@@ -1,1 +1,21 @@
 @use "../util" as *;
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: rem(40);
+
+  &__menu {
+    a {
+      margin: 0 rem(15);
+      color: var(--dark-grayish-blue);
+      font-size: rem(15);
+    }
+
+    a:last-child {
+      margin-right: 0;
+    }
+  }
+}

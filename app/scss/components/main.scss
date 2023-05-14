@@ -1,0 +1,42 @@
+@use "../util" as *;
+
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2fr 1fr 0.5fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  &__image {
+    grid-area: 1 / 1 / 2 / 3;
+    width: 100%; /* or any custom size */
+    height: 100%;
+    object-fit: contain;
+  }
+  &__title {
+    grid-area: 2 / 1 / 4 / 2;
+    margin-top: rem(30);
+  }
+  &__subtitle {
+    grid-area: 2 / 2 / 3 / 3;
+    margin-top: rem(30);
+  }
+  &__button {
+    grid-area: 3 / 2 / 4 / 3;
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--soft-red);
+    width: 50%;
+    height: 60%;
+    p {
+      text-align: center;
+      letter-spacing: rem(3);
+      text-transform: uppercase;
+      font-size: rem(10);
+      font-weight: 600;
+      color: var(--off-white);
+    }
+  }
+}
