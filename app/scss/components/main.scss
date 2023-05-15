@@ -4,22 +4,22 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 2fr 1fr 0.5fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: rem(20);
+  grid-row-gap: rem(0);
 
   &__image {
     grid-area: 1 / 1 / 2 / 3;
     width: 100%; /* or any custom size */
     height: 100%;
-    object-fit: contain;
+    object-fit:cover;
   }
   &__title {
     grid-area: 2 / 1 / 4 / 2;
-    margin-top: rem(30);
+    margin: rem(20) 0 0;
   }
   &__subtitle {
     grid-area: 2 / 2 / 3 / 3;
-    margin-top: rem(30);
+    margin: rem(20) 0 0;
   }
   &__button {
     grid-area: 3 / 2 / 4 / 3;
@@ -28,8 +28,10 @@
     align-items: center;
     justify-content: center;
     background-color: var(--soft-red);
-    width: 50%;
+    width: 55%;
     height: 60%;
+    cursor: pointer;
+
     p {
       text-align: center;
       letter-spacing: rem(3);
@@ -37,6 +39,27 @@
       font-size: rem(10);
       font-weight: 600;
       color: var(--off-white);
+    }
+
+    &:hover {
+      background-color: var(--very-dark-blue);
+
+      p {
+        font-size: rem(12);
+      }
+    }
+  }
+
+
+  @include breakpoint-down(small){
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(10);
+
+    &__button {
+      margin: rem(20) 0;
+      height: rem(90);
+      max-width: 50%;
     }
   }
 }

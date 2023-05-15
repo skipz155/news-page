@@ -3,4 +3,25 @@
 .aside-section {
   background-color: var(--very-dark-blue);
   padding: rem(25);
+
+  &__subtitle {
+    margin-bottom: rem(5);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--soft-orange);
+    }
+  }
+
+  &__text {
+    margin: rem(8) 0 rem(24);
+    padding-bottom: rem(20);
+    border-bottom: 1px solid;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: rem(10);
+    }
+  }
 }
