@@ -10,8 +10,8 @@
   &__image {
     grid-area: 1 / 1 / 2 / 3;
     width: 100%; /* or any custom size */
-    height: 100%;
-    object-fit:cover;
+    height: 38vh;
+    object-fit: cover;
   }
   &__title {
     grid-area: 2 / 1 / 4 / 2;
@@ -50,8 +50,7 @@
     }
   }
 
-
-  @include breakpoint-down(small){
+  @include breakpoint-down(small) {
     display: flex;
     flex-direction: column;
     row-gap: rem(10);
