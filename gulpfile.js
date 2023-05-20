@@ -1,4 +1,4 @@
-const { src, dest, watch, series, gulp } = require("gulp");
+const { src, dest, watch, series } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
@@ -6,7 +6,6 @@ const cssnano = require("cssnano");
 const babel = require("gulp-babel");
 const terser = require("gulp-terser");
 const browsersync = require("browser-sync").create();
-const deploy = require("gulp-gh-pages");
 
 //sass task
 function scssTask() {
@@ -21,15 +20,6 @@ function jsTask() {
     .pipe(babel({ presets: ["@babel/preset-env"] }))
     .pipe(terser())
     .pipe(dest("dist", { sourcemaps: "." }));
-}
-
-/**
- * Push build to gh-pages
- */
-function deployment() {
-  gulp.task("deploy", function () {
-    return gulp.src("./dist/**/*").pipe(deploy());
-  });
 }
 
 //reloading website
@@ -63,10 +53,4 @@ function watchTask() {
 }
 
 //default gulp task
-exports.default = series(
-  scssTask,
-  jsTask,
-  browserSyncServe,
-  watchTask,
-  deployment
-);
+exports.default = series(scssTask, jsTask, browserSyncServe, watchTask);
