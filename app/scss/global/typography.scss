@@ -1,0 +1,77 @@
+@use "../util" as *;
+
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: rem(48);
+  margin-bottom: rem(3);
+  color: var(--very-dark-blue);
+  font-weight: 900;
+  @include breakpoint(large) {
+    font-size: rem(50);
+  }
+
+  @include breakpoint-down(small){
+    font-size: rem(35);
+  }
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+p {
+  font-size: rem(15);
+}
+
+h2 {
+  font-size: rem(18);
+}
+
+.bottom-section{
+  h1 {
+    font-size: rem(28);
+    color: var(--grayish-blue);
+
+    @include breakpoint-down(small){
+      font-size: rem(24);
+    }
+  }
+  h2 {
+    font-weight: 800;
+    color: var(--very-dark-blue);
+
+    @include breakpoint-down(small){
+      font-size: rem(14);
+    }
+  }
+  p {
+
+    @include breakpoint-down(small){
+      font-size: rem(12);
+    }
+  }
+} 
+
+.aside-section{
+  h2 {
+      font-size: rem(38);
+      color: var(--soft-orange);
+  }
+
+  h3 {
+    font-size: rem(18);
+    font-weight: 800;
+    color: var(--off-white);
+  }
+
+
+} 
